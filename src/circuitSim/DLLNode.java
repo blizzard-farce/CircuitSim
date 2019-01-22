@@ -10,6 +10,12 @@ public class DLLNode<T> {
 	private DLLNode<T> nextLink;
 	private DLLNode<T> previousLink;
 	private T info;
+	
+	public DLLNode()
+	{
+		nextLink = null;
+		previousLink = null;
+	}
 		
 	public DLLNode(T info)
 	{
