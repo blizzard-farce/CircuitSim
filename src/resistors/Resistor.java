@@ -1,6 +1,6 @@
 package resistors;
 
-public abstract class Resistor {
+public abstract class Resistor extends circuitSim.DLLNode{
 	
 	private float resistance;
 	

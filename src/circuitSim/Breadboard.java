@@ -51,6 +51,9 @@ public class Breadboard
 				addComponent(circuit, input);
 				break;
 			case "3":
+				printCircuit(circuit);
+				System.out.println("Enter the component to remove:");
+				input = kb.next();
 				removeComponent(circuit, input);
 				break;
 			case "4":
@@ -61,6 +64,8 @@ public class Breadboard
 			case "0" :
 				kb.close();
 				System.exit(0);
+				break;
+			default:
 				break;
 			}
 		}
@@ -74,17 +79,19 @@ public class Breadboard
 	public static void addComponent(DoubleLinkedList circuit, String input)
 	{
 		
-		DLLNode node = new DLLNode();
+		DLLNode node;
 		
 		switch(input)
 		{
 			case "D":
-				node.setInfo(new powerSourcesDC.DCSupply());
+				node = new powerSourcesDC.DCSupply();
 				circuit.add(node);
 				break;
 			case "R":
-				node.setInfo(new resistors.FixedResistor());
+				node = new resistors.FixedResistor();
 				circuit.add(node);
+				break;
+			default:
 				break;
 		}
 	}

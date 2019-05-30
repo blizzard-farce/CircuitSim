@@ -2,11 +2,11 @@ package circuitSim;
 
 import java.util.ArrayList;
 
-public class DoubleLinkedList<T> 
+public class DoubleLinkedList 
 {
-	DLLNode<T> head; //stores the start of the list
-	DLLNode<T> currNode; //iterator for list
-	DLLNode<T> prevNode; //node before currNode for removing nodes
+	DLLNode head; //stores the start of the list
+	DLLNode currNode; //iterator for list
+	DLLNode prevNode; //node before currNode for removing nodes
 	
 	/**
 	 * default constructor
@@ -19,21 +19,11 @@ public class DoubleLinkedList<T>
 	}
 	
 	/**
-	 * constructor with first node inserted
-	 * @param info
-	 */
-	public DoubleLinkedList(T info)
-	{
-		add(info);
-	}
-	
-	/**
 	 * creates new node and adds to front of queue
 	 * @param info
 	 */
-	public void add(T info)
+	public void add(DLLNode newNode)
 	{
-		DLLNode<T> newNode = new DLLNode<T>(info);
 		newNode.setNextLink(head);
 		head = newNode;
 	}
@@ -44,21 +34,21 @@ public class DoubleLinkedList<T>
 	 * @param info
 	 * @return info
 	 */
-	public T remove(T info)
-	{
-		if (isEmpty())
-		{
-			return null;
-		}
-		else if (find(info))
-		{
-			prevNode = currNode.getPreviousLink();
-			
-			prevNode.setNextLink(currNode.getNextLink());
-			return currNode.getInfo();
-		}
-		return null;
-	}
+//	public T remove(T info)
+//	{
+//		if (isEmpty())
+//		{
+//			return null;
+//		}
+//		else if (find(info))
+//		{
+//			prevNode = currNode.getPreviousLink();
+//			
+//			prevNode.setNextLink(currNode.getNextLink());
+//			return currNode.getInfo();
+//		}
+//		return null;
+//	}
 	
 	/**
 	 * returns true if the list is empty
@@ -86,24 +76,24 @@ public class DoubleLinkedList<T>
 	 * @param info
 	 * @return
 	 */
-	public boolean find(T info)
-	{
-		resetCurrNode();
-		
-		while (currNode.getNextLink() != null)
-		{
-			if (currNode.getInfo() == info)
-			{
-				return true;
-			}
-			else
-			{
-				currNode = currNode.getNextLink();
-			}
-		}
-		
-		return false;
-	}
+//	public boolean find(T info)
+//	{
+//		resetCurrNode();
+//		
+//		while (currNode.getNextLink() != null)
+//		{
+//			if (currNode.getInfo() == info)
+//			{
+//				return true;
+//			}
+//			else
+//			{
+//				currNode = currNode.getNextLink();
+//			}
+//		}
+//		
+//		return false;
+//	}
 	
 	/**
 	 * returns true if given info is found in list
@@ -114,26 +104,26 @@ public class DoubleLinkedList<T>
 	 * @param index
 	 * @return
 	 */
-	public boolean find(T info, int index)
-	{
-		resetCurrNode();
-		
-		while (currNode.getNextLink() != null)
-		{
-			ArrayList<String> testArray = (ArrayList<String>) currNode.getInfo();
-			
-			if (testArray.get(index) == info)
-			{
-				return true;
-			}
-			else
-			{
-				currNode = currNode.getNextLink();
-			}
-		}
-		
-		return false;
-	}
+//	public boolean find(T info, int index)
+//	{
+//		resetCurrNode();
+//		
+//		while (currNode.getNextLink() != null)
+//		{
+//			ArrayList<String> testArray = (ArrayList<String>) currNode.getInfo();
+//			
+//			if (testArray.get(index) == info)
+//			{
+//				return true;
+//			}
+//			else
+//			{
+//				currNode = currNode.getNextLink();
+//			}
+//		}
+//		
+//		return false;
+//	}
 	
 	/**
 	 * iterates through list until given node is the next node
@@ -143,9 +133,9 @@ public class DoubleLinkedList<T>
 	 * legacy code from SortedLinkedList
 	 * @param node
 	 */
-//	public LLNode<T> findPrevious(LLNode<T> node)
+//	public LLNode findPrevious(LLNode node)
 //	{
-//		DLLNode<T> prevNode = head;
+//		DLLNode prevNode = head;
 //		
 //		while (prevNode.getLink() != null)
 //		{
@@ -185,7 +175,7 @@ public class DoubleLinkedList<T>
 //	{
 //		resetCurrNode();
 //		
-//		LLNode<T> otherNode;
+//		LLNode otherNode;
 ////		T currNodeInfo; currently unused - might be needed for generalized types
 ////		T otherNodeInfo;
 //		ArrayList<String> currNodeArray;
@@ -274,10 +264,10 @@ public class DoubleLinkedList<T>
 	 * @param nodeC
 	 * @param nodeO
 	 */
-	public void trade(DLLNode<T> nodeC, DLLNode<T> nodeO)
+	public void trade(DLLNode nodeC, DLLNode nodeO)
 	{
-		DLLNode<T> prevC;
-		DLLNode<T> prevO;
+		DLLNode prevC;
+		DLLNode prevO;
 		
 		if (nodeC == head)
 		{
@@ -311,8 +301,7 @@ public class DoubleLinkedList<T>
 		resetCurrNode();
 		while (currNode.getNextLink() != null)
 		{
-			T currNodeInfo = currNode.getInfo();
-			System.out.println(currNodeInfo);
+			currNode.print();
 			
 			currNode = currNode.getNextLink();
 		}

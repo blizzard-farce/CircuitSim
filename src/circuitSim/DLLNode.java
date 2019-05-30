@@ -5,11 +5,11 @@ package circuitSim;
  *
  */
 
-public class DLLNode<T> {
+public class DLLNode {
 	
-	private DLLNode<T> nextLink;
-	private DLLNode<T> previousLink;
-	private T info;
+	private DLLNode nextLink;
+	private DLLNode previousLink;
+	//private T info;
 	
 	public DLLNode()
 	{
@@ -17,40 +17,45 @@ public class DLLNode<T> {
 		previousLink = null;
 	}
 		
-	public DLLNode(T info)
-	{
-		this.info = info;
-		nextLink = null;
-		previousLink = null;
-	}
+//	public DLLNode(T info)
+//	{
+//		this.info = info;
+//		nextLink = null;
+//		previousLink = null;
+//	}
 		
-	public void setInfo(T info)
-	{
-		this.info = info;
-	}
-		
-	public T getInfo()
-	{
-		return info;
-	}
+//	public void setInfo(T info)
+//	{
+//		this.info = info;
+//	}
+//		
+//	public T getInfo()
+//	{
+//		return info;
+//	}
 	
-	public void setNextLink(DLLNode<T> link)
+	public void setNextLink(DLLNode link)
 	{
 		this.nextLink = link;
 	}
 	
-	public void setPreviousLink(DLLNode<T> link)
+	public void setPreviousLink(DLLNode link)
 	{
 		this.previousLink = link;
 	}
 	
-	public DLLNode<T> getNextLink()
+	public DLLNode getNextLink()
 	{
 		return nextLink;
 	}
 	
-	public DLLNode<T> getPreviousLink()
+	public DLLNode getPreviousLink()
 	{
 		return previousLink;
+	}
+	
+	public void print()
+	{
+		
 	}
 }

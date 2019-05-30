@@ -1,6 +1,6 @@
 package capacitors;
 
-public abstract class Capacitor {
+public abstract class Capacitor extends circuitSim.DLLNode {
 	
 	private float capacitance;
 	

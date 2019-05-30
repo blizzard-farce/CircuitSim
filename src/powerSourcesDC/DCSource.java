@@ -1,6 +1,6 @@
 package powerSourcesDC;
 
-public abstract class DCSource {
+public abstract class DCSource extends circuitSim.DLLNode{
 	
 	private float voltage;
 	private float maxCurrent;
