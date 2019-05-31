@@ -35,7 +35,14 @@ public class Breadboard
 			switch (input)
 			{
 			case "1":
-				printCircuit(circuit);
+				if (circuit.isEmpty())
+				{
+					System.out.println("No components added yet");
+				}
+				else
+				{
+					printCircuit(circuit);
+				}
 				break;
 			case "2":
 				if (circuit.isEmpty())
@@ -48,7 +55,8 @@ public class Breadboard
 				}
 				System.out.println("D = DC Source, R = Resistor");
 				input = kb.next();
-				addComponent(circuit, input);
+				//circuit = 
+						addComponent(circuit, input);
 				break;
 			case "3":
 				printCircuit(circuit);
@@ -77,8 +85,7 @@ public class Breadboard
 	}
 	
 	public static void addComponent(DoubleLinkedList circuit, String input)
-	{
-		
+	{	
 		DLLNode node;
 		
 		switch(input)
@@ -94,6 +101,8 @@ public class Breadboard
 			default:
 				break;
 		}
+		
+		//return circuit;
 	}
 	
 	public static void removeComponent(DoubleLinkedList circuit, String input)

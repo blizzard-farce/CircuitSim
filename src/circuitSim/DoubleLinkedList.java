@@ -299,11 +299,18 @@ public class DoubleLinkedList
 	public void print()
 	{
 		resetCurrNode();
-		while (currNode.getNextLink() != null)
+		
+		while (true)
 		{
 			currNode.print();
-			
-			currNode = currNode.getNextLink();
+			if (currNode.getNextLink() != null)
+			{
+				currNode = currNode.getNextLink();
+			}
+			else
+			{
+				break;
+			}
 		}
-	}
+	}	
 }

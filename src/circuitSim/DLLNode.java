@@ -56,6 +56,6 @@ public class DLLNode {
 	
 	public void print()
 	{
-		
+		System.out.println(this.toString());
 	}
 }
